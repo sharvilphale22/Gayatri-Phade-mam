@@ -1,0 +1,123 @@
+.pub__filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.pub__filter {
+  padding: 8px 20px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pub__filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pub__filter--active {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.pub__filter--active:hover {
+  color: var(--white);
+}
+
+.pub__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.pub__item:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.pub__item-body {
+  flex: 1;
+}
+
+.pub__badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.pub__badge--journal {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+}
+
+.pub__badge--conference {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.pub__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.pub__journal {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.pub__item-meta {
+  flex-shrink: 0;
+  margin-left: 24px;
+}
+
+.pub__year {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-500);
+  background: var(--navy-100);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .pub__item {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .pub__item-meta {
+    margin-left: 0;
+  }
+
+  .pub__filters {
+    flex-wrap: wrap;
+  }
+}

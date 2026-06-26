@@ -1,0 +1,419 @@
+.activity-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.activity-card:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.activity-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity-card__date-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.activity-card__role-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: var(--accent-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.activity-card__type-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.activity-card__event {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.activity-card__org {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.activity-card__meta-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.activity-card__topic {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.activity-card__topic-label {
+  font-weight: 600;
+  color: var(--navy-600);
+}
+
+.activity-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+  max-height: 4.8em;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.activity-card__desc.expanded {
+  max-height: 2000px;
+}
+
+.activity-card__read-more {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 10px;
+  font-family: var(--font-sans);
+}
+
+.activity-card__read-more:hover {
+  text-decoration: underline;
+}
+
+/* Tags */
+.activity-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.activity-card__tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--navy-600);
+  background: var(--navy-100);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: lowercase;
+}
+
+/* External link */
+.activity-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.activity-card__link:hover {
+  text-decoration: underline;
+}
+
+/* Event images */
+.activity-card__images {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.activity-card__img-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.activity-card__img-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-card__img-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-card__img-more {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Documents */
+.activity-card__docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.activity-card__doc-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-section);
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.activity-card__doc-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.activity-card__cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.activity-card__actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.activity-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.activity-card__btn:hover {
+  border-color: var(--navy-400);
+  color: var(--text-primary);
+}
+
+.activity-card__btn--edit:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.activity-card__btn--upload {
+  cursor: pointer;
+}
+
+.activity-card__btn--upload:hover {
+  border-color: #059669;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.06);
+}
+
+.activity-card__btn--delete:hover,
+.activity-card__btn--delete.confirm {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.06);
+}
+
+/* ===== Edit Modal ===== */
+.edit-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.edit-modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.edit-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.edit-modal__header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.edit-modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  padding: 4px;
+}
+
+.edit-modal__close:hover {
+  color: var(--text-primary);
+}
+
+.edit-modal__form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edit-modal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.edit-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.edit-modal__field label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.edit-modal__field input,
+.edit-modal__field textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+  background: var(--bg-section);
+}
+
+.edit-modal__field input:focus,
+.edit-modal__field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.edit-modal__field textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.edit-modal__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .activity-card {
+    padding: 20px;
+  }
+  .edit-modal__row {
+    grid-template-columns: 1fr;
+  }
+  .edit-modal {
+    max-width: 100%;
+  }
+  .activity-card__actions {
+    gap: 4px;
+  }
+  .activity-card__btn {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+  }
+}

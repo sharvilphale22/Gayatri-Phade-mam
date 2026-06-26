@@ -1,0 +1,126 @@
+/* ===== Search Filter ===== */
+.search-filter {
+  margin-bottom: 28px;
+}
+
+.search-filter__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 480px;
+}
+
+.search-filter__icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.search-filter--focused .search-filter__icon {
+  color: var(--accent);
+}
+
+.search-filter__input {
+  width: 100%;
+  padding: 13px 44px 13px 46px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.search-filter__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-filter__input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-filter__clear {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--navy-100);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-filter__clear:hover {
+  background: var(--navy-200);
+  color: var(--text-primary);
+}
+
+.search-filter__count {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.search-filter__count strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== Empty State ===== */
+.search-empty {
+  text-align: center;
+  padding: 48px 24px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.search-empty__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-section);
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.search-empty__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.search-empty__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 380px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.search-empty__desc strong {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .search-filter__input-wrap {
+    max-width: 100%;
+  }
+
+  .search-empty {
+    padding: 32px 16px;
+  }
+}

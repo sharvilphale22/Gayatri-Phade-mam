@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+
+# Environment files
+.env
+.env.*
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vercel
+.vercel
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# IDE files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

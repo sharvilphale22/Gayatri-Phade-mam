@@ -1,0 +1,238 @@
+/* ===== Global Search ===== */
+.gsearch {
+  position: relative;
+  z-index: 100;
+}
+
+.gsearch__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gsearch__icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.gsearch--focused .gsearch__icon {
+  color: var(--accent);
+}
+
+.gsearch__input {
+  width: 220px;
+  padding: 8px 32px 8px 34px;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  color: var(--text-primary);
+  background: var(--navy-50);
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.gsearch__input:focus {
+  width: 300px;
+  border-color: var(--accent);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.gsearch__input::placeholder {
+  color: var(--text-muted);
+}
+
+.gsearch__clear {
+  position: absolute;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: var(--navy-200);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gsearch__clear:hover {
+  background: var(--navy-300);
+  color: var(--text-primary);
+}
+
+/* ===== Dropdown ===== */
+.gsearch__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 420px;
+  max-height: 440px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.06);
+  animation: fadeInUp 0.2s ease-out;
+  z-index: 200;
+}
+
+.gsearch__dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gsearch__dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gsearch__dropdown::-webkit-scrollbar-thumb {
+  background: var(--navy-200);
+  border-radius: 3px;
+}
+
+.gsearch__count {
+  padding: 12px 16px 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.gsearch__count strong {
+  color: var(--accent);
+}
+
+/* Group */
+.gsearch__group {
+  padding: 4px 0;
+}
+
+.gsearch__group-header {
+  padding: 8px 16px 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Result item */
+.gsearch__result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  text-align: left;
+  transition: background 0.15s ease;
+  border-radius: 0;
+}
+
+.gsearch__result:hover {
+  background: var(--navy-50);
+}
+
+.gsearch__result-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.gsearch__result-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.gsearch__result-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.gsearch__result-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gsearch__result-arrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.gsearch__result:hover .gsearch__result-arrow {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Empty */
+.gsearch__empty {
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.gsearch__empty p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.gsearch__empty p strong {
+  color: var(--accent);
+}
+
+.gsearch__empty span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .gsearch__input {
+    width: 160px;
+    font-size: 0.8rem;
+    padding: 7px 28px 7px 30px;
+  }
+
+  .gsearch__input:focus {
+    width: 200px;
+  }
+
+  .gsearch__dropdown {
+    position: fixed;
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .gsearch__input {
+    width: 140px;
+  }
+
+  .gsearch__input:focus {
+    width: 180px;
+  }
+}
